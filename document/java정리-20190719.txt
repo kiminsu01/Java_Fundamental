@@ -1,0 +1,140 @@
+﻿식별자(Identifier)
+- 프로그램에서 사용되는 모든 이름(패키지, 클래스, 변수, 메서드)
+- 규칙
+ - 첫글자 문자(영문, 한글-자바는 유니코드를 지원)
+ - 특수문자 사용할 수 없음(예외, $, _)
+ - 숫자는 첫글자로 사용할 수 없지만 그이외에는 사용가능
+ - 예약어는 사용할 수 없음
+ - 대소문자 구분, 공백사용할 수 없음
+- 관례
+ - 클래스이름의 첫글자는 대문자, 그이외는 소문자로 한다.
+ - 두단어가 합쳐지면 두번째 첫글짜는 대문자로 한다.(camel case)
+ - 상수는 대문자로 한다.
+
+자료형(Data Type)
+
+- 기본자료형(primitive data type)
+ - byte-1byte-(-128 ~ 127) -> 아이피주소
+ - short-2byte-(-32,xxx ~ 32,xxx) -> 포트범위,유니코드
+ - int-4byte-(-21억 ~ 21억) -> 도메인(210.89.160.88)
+ - long-8byte-(많다)
+ - float-4byte-(int보다 작다)
+ - double-8byte-(long보다 작다)
+ - char-2byte(0-65,xxx)
+ - boolean-1byte(0-255)
+- 참조자료형(reference data type)
+ - array
+ - class
+ - interface
+
+리터럴(Literal)
+ - byte,short,int,long - 10진수, 2진수(0b), 8진수(0), 16진수(0x) , l
+ - float - f
+ - double - d, 생략가능
+ - char
+   - 문자('')
+   - 유니코드('\u0000'~'\uffff')
+   - 아스키코드(65, 97)
+ - boolean - true, false
+형변환(casting)
+ - (자료형)operand
+ - circuit(범위를 넘을때), cut(실수형 -> 정수형)
+ - circuit 권장 사항이 아니며 이런 경우는 자료형을 바꾸는게 좋음 
+
+연산자(operator)
+- +,-,*,/,%,++,--, +=, ==, 
+- &&(short circuit - 앞에 false)
+- ||(short circuit - 앞에 true)
+
+우선순위(operator priority)
+- () *,/,+,- && ||
+- +(더하기, 연결연산자)
+- System.out.println(1+2+3+"4"+5+6);
+
+
+제어문(control statement)
+
+- if statement
+ boolean isStop = a>10;
+ - if(a>10) 실행문;
+ - if(조건){ 
+	실행문;
+   }else{
+  	실행문;
+   }
+ - if(조건){ 
+	실행문;
+   }else if(조건){
+	실행문;
+   }else{
+	실행문;
+   }
+- switch -case statement
+int a = 1;
+switch(a){
+case 1: 실행문; break;
+case 2: 실행문; break;
+default :  실행문;
+}
+
+a가 올수 자료형 : byte, short ,int , char, String
+1,2 : 반드시 유일해야함.
+break : 사용할 수도 있고 안할수도 있다.(실행문 없는 경우는 break를 사용하지 않음)
+default : 위치 상관없음.
+
+- for loop statement
+
+for(초기값 ; 조건 ; 증감){
+	실행문;
+}
+
+- while loop stetement
+while(조건문){
+	실행문;
+}
+
+- break statement
+ - switch 블럭을 빠져 나갈때
+ - 반복문을 빠져 나갈때 
+ - break label은 inner 반복문에서 outter 반복문을 빠져 나갈때 사용
+ sung : for( ; ; ){
+	for( ; ; ;){
+		if(true) break sung;
+	}
+ }
+
+- continue statement
+ - 반복문에서 continue문을 만나면 수행을 중지하고 
+  for문일 경우에는 증감, 조건으로 이동, 
+  while문일 경우에는 조건으로 이동
+ - continue label
+ - continue label은 inner 반복문에서 outter 반복문의 
+   조건문으로 이동할 때 사용
+sung : while( 조건문1 ){
+	while( 조건문2){
+		if(true) continue sung;
+	}
+ }
+- return statement
+ - return문을 만나면 수행을 중지하고 호출한 곳으로 제어권을 넘겨줌
+
+배열(Array)
+ - 생성
+  - int[] a = new int[4];
+  - int[] a = {1,2,3,4};
+ - 할당
+   a[0] = 1;
+   a[1] = 2;
+   a[2] = 3;
+   a[3] = 4;
+ - 출력
+   for(int i=0 ; i<a.length ; i++){
+	System.out.println(a[i]);	
+   }
+ - 길이
+  - 배열길이 : length
+  - 문자열길이 : length()
+
+
+
+
