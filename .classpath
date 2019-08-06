@@ -15,5 +15,6 @@
 	<classpathentry kind="lib" path="C:/Users/KITCOOP/Downloads/poi-bin-4.1.0-20190412/poi-4.1.0/poi-ooxml-4.1.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/KITCOOP/Downloads/poi-bin-4.1.0-20190412/poi-4.1.0/poi-ooxml-schemas-4.1.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/KITCOOP/Downloads/poi-bin-4.1.0-20190412/poi-4.1.0/poi-scratchpad-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/KITCOOP/Downloads/jsoup-1.12.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
