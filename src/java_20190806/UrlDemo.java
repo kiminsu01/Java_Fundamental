@@ -40,7 +40,7 @@ public class UrlDemo {
 		while((readLine = br.readLine()) != null) {
 			System.out.println(readLine);
 			try {
-				Thread.sleep(10);
+				Thread.sleep(100); // 0.1초 쉰다.
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
