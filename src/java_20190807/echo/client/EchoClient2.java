@@ -18,6 +18,7 @@ public class EchoClient2 {
 		this.ip = ip;
 		this.port = port;
 	}
+	
 	public void run() {
 		Socket socket = null;
 		OutputStream out = null;
@@ -25,7 +26,6 @@ public class EchoClient2 {
 		BufferedWriter bw = null;
 		InputStream in = null;
 		FileOutputStream fos = null;
-		
 		try {
 			// ip와 port로 서버와 접속을 시도한다.
 			// 3. 소켓을 생성한다.

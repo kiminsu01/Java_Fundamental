@@ -1,4 +1,4 @@
-package java_20190807.unicast.client;
+package java_20190808.unicast.client;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -7,6 +7,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.net.Socket;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -32,10 +36,10 @@ public class UnicastClient implements ActionListener { //ActionListener 이벤�
 		this.port = port;
 		
 		jframe = new JFrame("Unicast Chatting");
-		
 		/*****************중앙 시작************************************/
 		jta = new JTextArea("",20,50);
 		jta.setEditable(false);
+		
 		JScrollPane jsp = new JScrollPane(jta,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 											JScrollPane.HORIZONTAL_SCROLLBAR_NEVER); // 텍스트창 생성
 		jta.setBackground(new Color(80,60,80)); //RGB 색상 지정
@@ -81,20 +85,17 @@ public class UnicastClient implements ActionListener { //ActionListener 이벤�
 		// X(종료)를 눌러 프로그램을 종료하기 위한 코드 
 		jframe.addWindowListener(new WindowAdapter() {  //생성자
 			public void windowClosing(WindowEvent e) {
-			System.exit(0);	// ;는 문장이 끝났다는 의미
+				//System.exit(0);	// ;는 문장이 끝났다는 의미
 			}
 			public void windowOpened(WindowEvent e) {
-				jtf.requestFocus();
+					jtf.requestFocus();	
 			}
+			
 		});
 		// 이벤트 등록
 		jbtn.addActionListener(this);
 		jtf.addActionListener(this);
-	}
-	public static void main(String[] args) {
-		JFrame.setDefaultLookAndFeelDecorated(true);
-		new UnicastClient("syh1011","127.0.0.1",5000);
-		
+	
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -114,6 +115,7 @@ public class UnicastClient implements ActionListener { //ActionListener 이벤�
 				//텍스트 필드에 입력된 값 없애기
 			}
 			jtf.setText(""); // 작은 if문 밖으로...
+			
 		}else if(obj == jbtn) {
 			//텍스트 필드 가져오기 
 			String message = jtf.getText();
@@ -121,12 +123,13 @@ public class UnicastClient implements ActionListener { //ActionListener 이벤�
 				JOptionPane.showMessageDialog(jframe,"try again", "Warning", JOptionPane.ERROR_MESSAGE);
 				//JOptionPane.ERROR_MESSAGE => x표 아이콘 화면출력
 			}else {
-				//텍스트 에어리어에 추가하기 
-				jta.append(id+ ":"+ message+"\n"); //입력자 id 출력, 줄바꾸기
+				//텍스트 에어리어에 추가하기
+				jta.append(id+ " : " + message+"\n");
 				//텍스트 필드에 입력된 값 없애기
+								
 			}
 			jtf.setText(""); // 작은 if문 밖으로...
 			jtf.requestFocus();
-		}					
-	}
+		}
+	}	
 }
