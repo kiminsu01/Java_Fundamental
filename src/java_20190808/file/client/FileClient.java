@@ -36,15 +36,15 @@ package java_20190808.file.client;
 				out = socket.getOutputStream();
 				osw = new OutputStreamWriter(out);
 				bw = new BufferedWriter(osw);
-				bw.write("apache-tomcat-9.0.22.zip"); // 가져올 파일이름
+				bw.write("java-12.pdf"); // 가져올 파일이름
 				bw.newLine();
 				bw.flush();
 
 				// 9. 소켓으로 입력스트림을 생성한 후에 서버에서 보낸 메세지를 읽는다.
 				in = socket.getInputStream();
-				File f = new File("c:\\dev\\test\\"); //저장할 디렉토리
+				File f = new File("c:\\dev\\test\\network"); //저장할 디렉토리
 				f.mkdirs();
-				f = new File(f,"apache-tomcat-9.0.22.zip"); // 저장할 파일이름 
+				f = new File(f,"java-12.pdf"); // 저장할 파일이름 
 				fos = new FileOutputStream(f);
 				byte[] readBytes = new byte[1024*8];
 				int readByteCount = 0;
