@@ -7,11 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import java_20190812.MemberDto;
-
 public class DeptDao {
 	private static DeptDao single;
-	
 	
 	private DeptDao() {
 		try {
@@ -34,7 +31,7 @@ public class DeptDao {
 		boolean isSuccess = false;
 		int index = 1;
 		try {
-			con = DriverManager.getConnection("jdbc:mariadb://localhost/kic2", "kic13", "kic13");
+			con = DriverManager.getConnection("jdbc:mariadb://localhost/kic", "kic12", "kic12");
 			StringBuffer sql = new StringBuffer();
 			sql.append("insert into dept(deptno, dname, loc) ");
 			sql.append("values(?,?,?)");
@@ -68,7 +65,7 @@ public class DeptDao {
 		boolean isSuccess = false;
 		int index = 1;
 		try {
-			con = DriverManager.getConnection("jdbc:mariadb://localhost/kic2", "kic13", "kic13");
+			con = DriverManager.getConnection("jdbc:mariadb://localhost/kic", "kic12", "kic12");
 			StringBuffer sql = new StringBuffer();
 			sql.append("update dept ");
 			sql.append("set dname=?, loc=? ");
@@ -102,7 +99,7 @@ public class DeptDao {
 		boolean isSuccess = false;
 		int index = 1;
 		try {
-			con = DriverManager.getConnection("jdbc:mariadb://localhost/kic2", "kic13", "kic13");
+			con = DriverManager.getConnection("jdbc:mariadb://localhost/kic", "kic12", "kic12");
 			StringBuffer sql = new StringBuffer();
 			sql.append("delete from dept ");
 			sql.append("where deptno = ?");
@@ -136,7 +133,7 @@ public class DeptDao {
 		int index = 1;
 
 		try {
-			con = DriverManager.getConnection("jdbc:mariadb://localhost/kic2", "kic13", "kic13");
+			con = DriverManager.getConnection("jdbc:mariadb://localhost/kic", "kic12", "kic12");
 
 			StringBuffer sql = new StringBuffer();
 			sql.append("select deptno, dname, loc ");

@@ -10,10 +10,10 @@ public static void main(String[] args) {
 	if(isSuccess) {
 		System.out.println("부서가 추가되었습니다.");
 	}else {
-		System.out.println("오류");
+		System.out.println("추가 오류");
 	}
 	
-	isSuccess = dao.update(new DeptDto(50, "Development","강남역"));
+	isSuccess = dao.update(new DeptDto(50, "Development","역삼역"));
 	if(isSuccess) {
 		System.out.println("부서가 수정되었습니다.");
 	}else {
@@ -25,13 +25,13 @@ public static void main(String[] args) {
 		int no = d.getNo();
 		String name = d.getName();
 		String loc = d.getLoc();
-		System.out.printf("%d\t%s\t%s%n", no, name, loc);
+		System.out.printf("%d, %s, %s%n", no, name, loc);
 		
 	}
 	isSuccess = dao.delete(50);
 	if(isSuccess) {
-		System.out.println("부서가 수정되었습니다.");
-		}else {
+		System.out.println("부서가 삭제되었습니다.");
+	}else {
 			System.out.println("수정 오류");
 	}
 }

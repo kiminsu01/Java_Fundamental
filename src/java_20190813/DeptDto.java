@@ -3,13 +3,12 @@ package java_20190813;
 public class DeptDto {
 	private int no;
 	private String name;
-	private String addr;
 	private String loc;
-	public DeptDto(int no, String name, String addr) {
+	public DeptDto(int no, String name, String loc) {
 		super();
 		this.no = no;
 		this.name = name;
-		this.addr = addr;
+		this.loc = loc;
 	}
 	
 	public int getNo() {

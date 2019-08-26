@@ -36,7 +36,7 @@ package java_20190808.file.client;
 				out = socket.getOutputStream();
 				osw = new OutputStreamWriter(out);
 				bw = new BufferedWriter(osw);
-				bw.write("java-12.pdf"); // 가져올 파일이름
+				bw.write("javascript.pdf"); // 가져올 파일이름
 				bw.newLine();
 				bw.flush();
 
@@ -44,7 +44,7 @@ package java_20190808.file.client;
 				in = socket.getInputStream();
 				File f = new File("c:\\dev\\test\\network"); //저장할 디렉토리
 				f.mkdirs();
-				f = new File(f,"java-12.pdf"); // 저장할 파일이름 
+				f = new File(f,"javascript.pdf"); // 저장할 파일이름 
 				fos = new FileOutputStream(f);
 				byte[] readBytes = new byte[1024*8];
 				int readByteCount = 0;
